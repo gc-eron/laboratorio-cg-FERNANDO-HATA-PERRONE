@@ -7,7 +7,7 @@ st.set_page_config(page_title="Computação Gráfica")
 
 pagina = st.sidebar.radio(
     "Escolha uma atividade:",
-    ["Início", "Atividade 1", "Atividade 2"]
+    ["Início", "Atividade 1", "Atividade 2", "Atividade 3"]
 )
 
 pasta = Path(__file__).parent / "src" / "laboratorio_cg"
@@ -21,3 +21,6 @@ elif pagina == "Atividade 1":
 
 elif pagina == "Atividade 2":
     runpy.run_path(str(pasta / "atv2.py"))
+
+elif pagina == "Atividade 3":
+    runpy.run_path(str(pasta / "atv3.py"))
