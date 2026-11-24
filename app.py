@@ -1,6 +1,6 @@
-
+from pathlib import Path
+import runpy
 import streamlit as st
-import importlib
 
 st.set_page_config(
     page_title="Laboratório de Computação Gráfica",
@@ -14,26 +14,28 @@ pagina = st.sidebar.radio(
         "Atividade 1",
         "Atividade 2",
         "Atividade 3",
-        "Atividade 4"
+        "Atividade 4",
+        "Atividade 5"
     ]
 )
+
+pasta = Path(__file__).resolve().parent / "src" / "laboratorio_cg"
 
 if pagina == "Início":
     st.title("Laboratório de Computação Gráfica")
     st.write("Selecione uma atividade no menu lateral.")
 
 elif pagina == "Atividade 1":
-    from src.laboratorio_cg import atv1
-    importlib.reload(atv1)
+    runpy.run_path(str(pasta / "atv1.py"))
 
 elif pagina == "Atividade 2":
-    from src.laboratorio_cg import atv2
-    importlib.reload(atv2)
+    runpy.run_path(str(pasta / "atv2.py"))
 
 elif pagina == "Atividade 3":
-    from src.laboratorio_cg import atv3
-    importlib.reload(atv3)
+    runpy.run_path(str(pasta / "atv3.py"))
 
 elif pagina == "Atividade 4":
-    from src.laboratorio_cg import atv4
-    importlib.reload(atv4)
+    runpy.run_path(str(pasta / "atv4.py"))
+
+elif pagina == "Atividade 5":
+    runpy.run_path(str(pasta / "atv5.py"))
