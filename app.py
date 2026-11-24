@@ -1,3 +1,4 @@
+
 from pathlib import Path
 import runpy
 import streamlit as st
@@ -15,7 +16,8 @@ pagina = st.sidebar.radio(
         "Atividade 2",
         "Atividade 3",
         "Atividade 4",
-        "Atividade 5"
+        "Atividade 5",
+        "Trabalho"
     ]
 )
 
@@ -39,3 +41,6 @@ elif pagina == "Atividade 4":
 
 elif pagina == "Atividade 5":
     runpy.run_path(str(pasta / "atv5.py"))
+
+elif pagina == "Trabalho":
+    runpy.run_path(str(pasta / "trabalho.py"))
